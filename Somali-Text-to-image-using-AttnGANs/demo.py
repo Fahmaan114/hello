@@ -15,6 +15,7 @@ import torchvision.transforms as transforms
 
 from pathlib import Path
 import streamlit as st
+import httpcore
 
 from googletrans import Translator
 #from translate import Translator
