@@ -130,12 +130,8 @@ class TextDataset(data.Dataset):
         self.number_example = len(self.filenames)
 
     def load_bbox(self):
-        #data_dir = self.data_dir
-        data_dir = 'Somali-Text-to-image-using-AttnGANs/data/birds/'
-        bbox_path = os.path.join(data_dir, 'CUB_200_2011/bounding_boxes.txt')
-        #bbox_path = os.path.join(data_dir, "CUB_200_2011/bounding_boxes.txt")
-        print("Current working directory:", os.getcwd())
-        print("Trying to read bounding_boxes.txt from:", bbox_path)
+        data_dir = 'Somali-Text-to-image-using-AttnGANs/data/birds'
+        bbox_path = os.path.join(data_dir, "CUB_200_2011/bounding_boxes.txt")
         df_bounding_boxes = pd.read_csv(
             bbox_path, delim_whitespace=True, header=None
         ).astype(int)
@@ -236,8 +232,8 @@ class TextDataset(data.Dataset):
             len(ixtoword),
         ]
 
-    def load_text_data(self, split):
-        data_dir = 'Somali-Text-to-image-using-AttnGANs/data/birds/'
+    def load_text_data(self, data_dir, split):
+        data_dir = 'Somali-Text-to-image-using-AttnGANs/data/birds'
         filepath = os.path.join(data_dir, "captions.pickle")
         train_names = self.load_filenames(data_dir, "train")
         test_names = self.load_filenames(data_dir, "test")
