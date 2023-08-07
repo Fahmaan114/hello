@@ -236,7 +236,8 @@ class TextDataset(data.Dataset):
             len(ixtoword),
         ]
 
-    def load_text_data(self, data_dir, split):
+    def load_text_data(self, split):
+        data_dir = 'Somali-Text-to-image-using-AttnGANs/data/birds/'
         filepath = os.path.join(data_dir, "captions.pickle")
         train_names = self.load_filenames(data_dir, "train")
         test_names = self.load_filenames(data_dir, "test")
